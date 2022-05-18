@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".fragments.ProfileFragment">
+
+        <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <RelativeLayout
+                    android:id="@+id/profileLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp">
+
+                <ImageView
+                        android:id="@+id/photoIv"
+                        android:layout_width="@dimen/standard_width"
+                        android:layout_height="250dp"
+                        android:maxHeight="300dp"
+                        android:contentDescription="Profile Image"
+                        android:paddingBottom="8dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/default_pic" />
+
+                <TextView
+                        android:id="@+id/emailTv"
+                        android:layout_width="@dimen/standard_width"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/photoIv"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_horizontal"
+                        android:text="email@provider.com"
+                        android:textSize="14sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/nameTIL"
+                        android:layout_width="@dimen/standard_width"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/emailTv"
+                        android:theme="@style/Widget.App.TextInputLayout"
+                        android:paddingBottom="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/nameEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_name" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ageTIL"
+                        android:layout_width="@dimen/standard_width"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nameTIL"
+                        android:theme="@style/Widget.App.TextInputLayout"
+                        android:paddingBottom="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/ageEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_age" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                        android:id="@+id/genderLayout"
+                        android:layout_width="@dimen/standard_width"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ageTIL"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            android:id="@+id/genderTV"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/standard_height"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="@string/hint_gender" />
+
+                    <RadioGroup
+                            android:id="@+id/genderGroup"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/standard_height"
+                            android:layout_weight="2"
+                            android:gravity="right"
+                            android:orientation="horizontal"
+                            android:paddingBottom="8dp">
+
+                        <RadioButton
+                                android:id="@+id/radioMan1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hint_man" />
+
+                        <RadioButton
+                                android:id="@+id/radioWoman1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hint_woman" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/preferredGenderLayout"
+                        android:layout_width="@dimen/standard_width"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/genderLayout"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            android:id="@+id/preferredGenderTV"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/standard_height"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:text="@string/hint_preferred_gender" />
+
+                    <RadioGroup
+                            android:id="@+id/preferredGenderGroup"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/standard_height"
+                            android:layout_weight="2"
+                            android:gravity="right"
+                            android:orientation="horizontal"
+                            android:paddingBottom="8dp">
+
+                        <RadioButton
+                                android:id="@+id/radioMan2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hint_man" />
+
+                        <RadioButton
+                                android:id="@+id/radioWoman2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hint_woman" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/profileTextTIL"
+                        android:layout_width="@dimen/standard_width"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/preferredGenderLayout"
+                        android:paddingBottom="8dp"
+                        android:theme="@style/Widget.App.TextInputLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/profileTextEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/hint_profile_description"
+                            android:inputType="textLongMessage|textAutoCorrect|textMultiLine|textAutoComplete"
+                            tools:text="This is some sample text that I wrote a long time ago in a galaxy far far away..." />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                        android:id="@+id/buttonLayout"
+                        android:layout_width="@dimen/standard_width"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/profileTextTIL"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+                <Button
+                        android:id="@+id/applyButton"
+                        style="@style/StandardButton"
+                        android:layout_width="@dimen/standard_width"
+                        android:layout_height="@dimen/standard_height"
+                        android:layout_below="@id/profileTextTIL"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/button_apply" />
+
+                <Button
+                        android:id="@+id/clearMatchesButton"
+                        style="@style/DangerButton"
+                        android:layout_width="@dimen/standard_width"
+                        android:layout_height="@dimen/standard_height"
+                        android:layout_below="@id/applyButton"
+                        android:text="@string/button_clear_matches" />
+
+                <Button
+                        android:id="@+id/signoutButton"
+                        style="@style/StandardButtonGrey"
+                        android:layout_width="@dimen/standard_width"
+                        android:layout_height="@dimen/standard_height"
+                        android:layout_below="@id/clearMatchesButton"
+                        android:text="@string/button_sign_out" />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/progressLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/darkGrey"
+                android:visibility="invisible"
+                android:gravity="center">
+
+            <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </FrameLayout>
+</layout>
